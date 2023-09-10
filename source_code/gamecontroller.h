@@ -35,6 +35,10 @@ private:
     //The view controlled by this controller
     GameView * gameview;
 
+    QElapsedTimer deathTimer;
+    bool marioIsDying = false;
+    int deathMaxTime = 3*1000;
+
     QElapsedTimer levelTimer;
     int levelMaxTime = 400*1000;
 

@@ -134,5 +134,7 @@
         <file>resources/maps/Madness in clouds.json</file>
         <file>resources/maps/G's World.json</file>
         <file>resources/maps/colin's world.json</file>
+        <file>resources/maps/World_1-1.json</file>
+        <file>resources/maps/World_3-1.json</file>
     </qresource>
 </RCC>

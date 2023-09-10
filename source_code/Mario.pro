@@ -3,8 +3,7 @@ QT += core gui widgets multimedia
 win32:RC_ICONS += resources/marioico.ico
 
 # Flags for successful webassembly build
-# QMAKE_TOTAL_MEMORY = 33554432
-# QMAKE_LFLAGS+= "-s TOTAL_MEMORY=33554432"
+QMAKE_LFLAGS+= "-s TOTAL_MEMORY=33554432"
 
 # greaterThan(QT_MAJOR_VERSION, 4): QT += widgets multimedia
 

@@ -2,6 +2,7 @@
 #include "mainwindow.h"
 #include "QDebug"
 #include <QtMath>
+#include <QTextStream>
 
 
 GameController::GameController(){
@@ -44,9 +45,23 @@ void GameController::advance() {
     if(mario && mario->getMarioFlagpoleCinematicState() == HANGINGONFLAGPOLE){
         music->stop();
     }
+
     if(mario && mario->isDead()){
         music->stop();
+
+        // Si le timer n'a pas démarré:
+        if(marioIsDying == false){
+            marioIsDying = true;
+            deathTimer.start();
+        }
     }
+    // Une fois le délai dépassé, reset le niveau
+    if(marioIsDying == true && deathTimer.elapsed() > deathMaxTime){
+        deathTimer.invalidate();
+        marioIsDying = false;
+        reset();
+    }
+
     if(mario && mario->isTransforming()){
         mario->animate();
         for(Inert * i : inerts){ i->animate(); }
@@ -235,8 +250,8 @@ void GameController::update(CameraVisitor & visitor){
 
 void GameController::keyPressEventHandler(QKeyEvent *e){
     if(mario != nullptr && !mario->getIsInFlagpoleCinematic()){
-        if(e->key() == settings->getKeyMoveLeft()){
-            if(!keyQueue.contains(settings->getKeyMoveLeft())){
+        if(e->key() == settings->getKeyMoveLeft() || e->key() == settings->getKeyMoveLeft2()){
+            if(!(keyQueue.contains(settings->getKeyMoveLeft() || e->key() == settings->getKeyMoveLeft2()))){
                 keyQueue.append(settings->getKeyMoveLeft());
             }
             updateDirection();
@@ -290,9 +305,8 @@ void GameController::keyPressEventHandler(QKeyEvent *e){
 
 void GameController::keyReleaseEventHandler(QKeyEvent *e){
     if(mario != nullptr && !mario->getIsInFlagpoleCinematic()){
-        if(e->key() == settings->getKeyMoveLeft()){
+        if(e->key() == settings->getKeyMoveLeft() || e->key() == settings->getKeyMoveLeft2()){
             keyQueue.removeOne(settings->getKeyMoveLeft());
-
             updateDirection();
         }
 
@@ -317,7 +331,7 @@ void GameController::updateDirection(){
             mario->setMoving(false);
             return;
         }
-        if(keyQueue.last() == settings->getKeyMoveLeft()){
+        if(keyQueue.last() == settings->getKeyMoveLeft() || keyQueue.last() == settings->getKeyMoveLeft2()){
             if(mario->getDirection() != LEFT){
                mario->setDirection(LEFT);
             }

@@ -18,23 +18,25 @@ For windows: <a id="raw-url" href="https://raw.githubusercontent.com/ColinTr/Mar
 
 ## To update and compile the code
 
+1. Download [Qt Creator](https://www.qt.io/download-qt-installer-oss) and install Qt 5.15.2 MSCV 2019
 
-1. Open and update the code:
+2. Compiling an executable (see https://www.youtube.com/watch?v=rFHPOZoqzcg):
+	```
+	cd C:\Qt\5.15.2\msvc2019\bin\
+	windeployqt.exe C:\Users\Username\Desktop\Mario.exe
+	```
 
-    1.1. Download [Qt Creator](https://www.qt.io/download-qt-installer-oss) and install Qt 5.15.2 MSCV 2019.
+3. Compiling for webassembly (see https://www.youtube.com/watch?v=YSAUoAI5hQA):
+	```
+	cd emsdk
+	emsdk activate 1.39.8
+	cd mario-webassembly-build
+	qmake MarioQT\source_code
+	mingw32-make
 	
-    1.2. Open the project with Qt Creator using the Mario.pro file.
-
-2. Compiling (if you have trouble compiling, see: https://www.youtube.com/watch?v=rFHPOZoqzcg)
-
-    2.1. Find windeployqt.exe and cd to this folder: > C:\Qt\5.15.2\msvc2019\bin\
-	
-    2.2. Find the compiled .exe file of the project
-	
-    2.3. Run > windeployqt.exe C:\Users\Username\Desktop\Mario.exe
-
-3. To compile for the web, see https://www.youtube.com/watch?v=YSAUoAI5hQA
-
+	```
+	If you have memory errors during mingw32-make, add the following flag to the Mario.pro file:
+	> QMAKE_LFLAGS+= "-s TOTAL_MEMORY=33554432"
 
 ## Trailer
 

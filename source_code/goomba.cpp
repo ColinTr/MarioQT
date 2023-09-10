@@ -64,7 +64,6 @@ void Goomba::animate()
     }
 }
 
-
 void Goomba::collisionOnLeftHandler(ObjectModel *o){
     Entity::collisionOnLeftHandler(o);
     movingDirection = RIGHT;

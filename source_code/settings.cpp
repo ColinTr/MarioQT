@@ -30,6 +30,16 @@ void Settings::setKeyMoveLeft(int value)
     keyMoveLeft = value;
 }
 
+int Settings::getKeyMoveLeft2() const
+{
+    return keyMoveLeft2;
+}
+
+void Settings::setKeyMoveLeft2(int value)
+{
+    keyMoveLeft2 = value;
+}
+
 int Settings::getKeyRun() const
 {
     return keyRun;
@@ -48,16 +58,6 @@ int Settings::getKeyShootFireBall() const
 void Settings::setKeyShootFireBall(int value)
 {
     keyShootFireBall = value;
-}
-
-int Settings::getKeyA() const
-{
-    return keyA;
-}
-
-void Settings::setKeyA(int value)
-{
-    keyA = value;
 }
 
 QString Settings::getJump() const
@@ -89,10 +89,10 @@ Settings::Settings()
 {
     keyJump = Qt::Key_Space;
     keyMoveLeft = Qt::Key_Q;
+    keyMoveLeft2 = Qt::Key_A;
     keyMoveRight = Qt::Key_D;
     keyRun = Qt::Key_Shift;
     keyShootFireBall = Qt::Key_Shift;
-    keyA = Qt::Key_A;
 }
 
 void Settings::readConfig(QString filename)

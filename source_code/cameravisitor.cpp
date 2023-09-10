@@ -7,7 +7,6 @@ CameraVisitor::CameraVisitor(){
     }
 }
 
-
 void CameraVisitor::setup(int pos, int windowWidth, int levelWidth){
     setWindowWidth(windowWidth);
     setLevelWidth(levelWidth);

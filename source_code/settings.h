@@ -18,9 +18,9 @@ private:
     int keyJump;
     int keyMoveRight;
     int keyMoveLeft;
+    int keyMoveLeft2;
     int keyRun;
     int keyShootFireBall;
-    int keyA;
 
     QString jump;
     QString run;
@@ -40,6 +40,8 @@ public:
     void setKeyMoveRight(int value);
     int getKeyMoveLeft() const;
     void setKeyMoveLeft(int value);
+    int getKeyMoveLeft2() const;
+    void setKeyMoveLeft2(int value);
     int getKeyRun() const;
     void setKeyRun(int value);
     int getKeyShootFireBall() const;
