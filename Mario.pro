@@ -1,6 +1,12 @@
-QT       += core gui
+QT += core gui widgets multimedia
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets multimedia
+win32:RC_ICONS += resources/marioico.ico
+
+# Flags for successful webassembly build
+# QMAKE_TOTAL_MEMORY = 33554432
+# QMAKE_LFLAGS+= "-s TOTAL_MEMORY=33554432"
+
+# greaterThan(QT_MAJOR_VERSION, 4): QT += widgets multimedia
 
 CONFIG += c++11
 
@@ -132,3 +138,5 @@ DISTFILES += \
     readme_imgs/leveleditor.png \
     readme_imgs/menu.png \
     readme_imgs/option.png
+
+INCLUDEPATH += $$_PRO_FILE_PWD_

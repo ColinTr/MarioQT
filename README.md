@@ -1,6 +1,40 @@
 # Mario QT
-## Démo
+
+### Play it live at https://colintr.me/mario/Mario.html !
+
+## Installation
+
+For windows: <a id="raw-url" href="https://raw.githubusercontent.com/ColinTr/MarioQT/master/Mario_Editor_installer.exe">download the installer</a>
+
+## Controls
+
+- Q and D for left and right control
+- Space to jump
+- Shift to shoot fireball
+- T to show hitboxes
+- R to restart the level
+- C for power-up
+
+
+## To update and compile the code
+
+
+1. Open and update the code:
+    1.1. Download [Qt Creator](https://www.qt.io/download-qt-installer-oss) and install Qt 5.15.2 MSCV 2019.
+    1.2. Open the project with Qt Creator using the Mario.pro file.
+
+2. Compiling (if you have trouble compiling, see: https://www.youtube.com/watch?v=rFHPOZoqzcg)
+    2.1. Find windeployqt.exe and cd to this folder: > C:\Qt\5.15.2\msvc2019\bin\
+    2.2. Find the compiled .exe file of the project
+    2.3. Run > windeployqt.exe C:\Users\Username\Desktop\Mario.exe
+
+3. To compile for the web, see https://www.youtube.com/watch?v=YSAUoAI5hQA
+
+
+## Trailer
+
 https://www.youtube.com/watch?v=-SCnSPH7mK8
+
 
 ## Qu'est-ce que c'est ?
 
@@ -28,7 +62,6 @@ Le jeu respectant le modèle MVC se voit séparé en trois parties distinctes :
 
 ## Screenshots du jeu
 
-Voici quelques images du jeu :
 - Le jeu :
 
 ![Screenshot](readme_imgs/ingame.png)
