@@ -18,6 +18,9 @@ For windows: <a id="raw-url" href="https://raw.githubusercontent.com/ColinTr/Mar
 - C for power-up
 
 
+![Screenshot](readme_imgs/ingame.png)
+
+
 ## To update and compile the code
 
 1. Download [Qt Creator](https://www.qt.io/download-qt-installer-oss) and install Qt 5.15.2 MSCV 2019
@@ -70,10 +73,6 @@ Le jeu respectant le modèle MVC se voit séparé en trois parties distinctes :
 - Le controlleur avec la classe GameController qui contient la boucle principal de notre jeux. GameController possède une liste d'objets et qui, à chaque itération de sa boucle principal (la fonction advance()), va calculer la nouvelle position des objets, vérifier qu'ils n'entrent pas en collision avec les autres objets, résoudre les collisions si besoin et enfin animer l'objet. On va ensuite appeler la vue pour lui indiquer qu'il faut qu'elle repeigne sa scene.
 
 ## Screenshots du jeu
-
-- Le jeu :
-
-![Screenshot](readme_imgs/ingame.png)
 
 - L'éditeur de niveaux :
 
