@@ -1,5 +1,7 @@
 # Mario QT
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 ### Play it live at https://colintr.me/mario/Mario.html !
 
 ## Installation
@@ -84,3 +86,8 @@ Le jeu respectant le modèle MVC se voit séparé en trois parties distinctes :
 - Le menu d'options :
 
 ![Screenshot](readme_imgs/option.png)
+
+
+## License
+
+This code is released under the MIT license. See the LICENSE file for more information.
