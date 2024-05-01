@@ -1,6 +1,6 @@
 # Mario QT
 
-### Play it live at https://colintr.me/mario/Mario.html !
+### Play it live at https://colintr.fr/mario/Mario.html !
 
 ## Installation
 
@@ -33,8 +33,8 @@ For windows: <a id="raw-url" href="https://raw.githubusercontent.com/ColinTr/Mar
 	cd mario-webassembly-build
 	qmake MarioQT\source_code
 	mingw32-make
-	
 	```
+	
 	If you have memory errors during mingw32-make, add the following flag to the Mario.pro file:
 	> QMAKE_LFLAGS+= "-s TOTAL_MEMORY=33554432"
 
